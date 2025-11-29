@@ -482,15 +482,7 @@ function setCountdown() {
 }
 
 
-
-// Function to share on social media
-function shareOnSocial(platform) {
-    let url = '';
-    const text = `Check out this beautiful birthday wish for ${userName}! ${window.location.href}`;
-    
-    switch(platform) {
-        case 'facebook':
-            url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+l = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
             break;
         case 'twitter':
             url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
@@ -499,9 +491,7 @@ function shareOnSocial(platform) {
             url = `https://wa.me/?text=${encodeURIComponent(text)}`;
             break;
     }
-    
-    window.open(url, '_blank', 'width=600,height=400');
-    
+
     // Animate share button
     gsap.to(`.social-icon:nth-child(${['facebook', 'twitter', 'whatsapp'].indexOf(platform) + 1})`, {
         scale: 1.3,
