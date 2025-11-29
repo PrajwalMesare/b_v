@@ -1,45 +1,57 @@
-
+/* -------------------------------
+   GLOBAL RESET
+---------------------------------*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;             /* Remove default margin */
+    padding: 0;            /* Remove default padding */
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
 }
 
+/* -------------------------------
+   BODY STYLES
+---------------------------------*/
 body {
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #ffebee 0%, #fce4ec 50%, #f8bbd0 100%);
-    color: #d81b60;
-    overflow-x: hidden;
-    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif; /* Primary font */
+    background: linear-gradient(135deg, #ffebee 0%, #fce4ec 50%, #f8bbd0 100%); /* Pink gradient background */
+    color: #d81b60;   /* Default text color */
+    overflow-x: hidden; /* Hide horizontal scroll */
+    min-height: 100vh;  /* Full screen height */
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
 
+/* Particle background */
 #particles-js {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 0; /* Behind main container */
 }
 
+/* -------------------------------
+   MAIN CONTAINER
+---------------------------------*/
 .container {
     max-width: 800px;
     width: 90%;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(216, 27, 96, 0.3);
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+    border-radius: 20px;    /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(216, 27, 96, 0.3); /* Pink shadow */
     padding: 30px;
     position: relative;
-    z-index: 1;
+    z-index: 1; /* Above particles */
     overflow: hidden;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px); /* Glass effect */
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+/* -------------------------------
+   HEADINGS
+---------------------------------*/
 h1, h2 {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script', cursive; /* Handwritten style font */
     text-align: center;
     margin-bottom: 20px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
@@ -50,7 +62,7 @@ h1 {
     color: #d81b60;
     background: linear-gradient(to right, #d81b60, #ff4081);
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; /* Gradient text effect */
     margin-bottom: 30px;
 }
 
@@ -60,6 +72,9 @@ h2 {
     margin-bottom: 25px;
 }
 
+/* -------------------------------
+   PARAGRAPH
+---------------------------------*/
 p {
     font-size: 1.2rem;
     line-height: 1.8;
@@ -68,24 +83,30 @@ p {
     color: #555;
 }
 
+/* -------------------------------
+   STEP SECTIONS
+---------------------------------*/
 .step {
-    display: none;
+    display: none; /* Hide all steps initially */
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 500px;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(20px); /* Slide up effect */
     transition: opacity 0.8s, transform 0.8s;
     padding: 20px;
 }
 
 .step.active {
-    display: flex;
+    display: flex; /* Show active step */
     opacity: 1;
     transform: translateY(0);
 }
 
+/* -------------------------------
+   BUTTONS
+---------------------------------*/
 .btn {
     background: linear-gradient(45deg, #d81b60, #ff4081);
     color: white;
@@ -113,13 +134,12 @@ p {
     transform: translateY(1px);
 }
 
+/* Button hover background gradient */
 .btn:before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: linear-gradient(45deg, #ff4081, #d81b60);
     z-index: -1;
     opacity: 0;
@@ -130,6 +150,9 @@ p {
     opacity: 1;
 }
 
+/* -------------------------------
+   HEART ANIMATION
+---------------------------------*/
 .heart {
     width: 120px;
     height: 120px;
@@ -137,7 +160,7 @@ p {
     transform: rotate(45deg);
     margin: 40px auto;
     position: relative;
-    animation: heartbeat 1.5s infinite;
+    animation: heartbeat 1.5s infinite; /* Heartbeat effect */
     cursor: pointer;
     box-shadow: 0 0 40px rgba(255, 64, 129, 0.6);
     transition: all 0.3s;
@@ -148,6 +171,7 @@ p {
     box-shadow: 0 0 60px rgba(255, 64, 129, 0.8);
 }
 
+/* Heart top circles */
 .heart:before, .heart:after {
     content: '';
     width: 120px;
@@ -158,16 +182,10 @@ p {
     box-shadow: 0 0 40px rgba(255, 64, 129, 0.6);
 }
 
-.heart:before {
-    top: -60px;
-    left: 0;
-}
+.heart:before { top: -60px; left: 0; }
+.heart:after  { top: 0; left: -60px; }
 
-.heart:after {
-    top: 0;
-    left: -60px;
-}
-
+/* Heartbeat keyframes */
 @keyframes heartbeat {
     0% { transform: rotate(45deg) scale(1); }
     25% { transform: rotate(45deg) scale(1.1); }
@@ -177,6 +195,9 @@ p {
     100% { transform: rotate(45deg) scale(1); }
 }
 
+/* -------------------------------
+   NAME INPUT (removed if fixed name)
+---------------------------------*/
 .name-input {
     padding: 15px 25px;
     border: 2px solid #f8bbd0;
@@ -198,6 +219,9 @@ p {
     transform: scale(1.02);
 }
 
+/* -------------------------------
+   PHOTO FRAME
+---------------------------------*/
 .photo-frame {
     width: 220px;
     height: 220px;
@@ -226,14 +250,16 @@ p {
     transform: scale(1.1);
 }
 
+/* -------------------------------
+   FLOATING HEARTS
+---------------------------------*/
 .floating-hearts {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     pointer-events: none;
-    z-index: 10;
+    z-index: 10; /* On top */
 }
 
 .floating-heart {
@@ -246,25 +272,13 @@ p {
 }
 
 @keyframes float-up {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100vh) rotate(360deg);
-        opacity: 0;
-    }
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
 }
 
-.confetti {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background-color: #f44336;
-    opacity: 0;
-    z-index: 20;
-}
-
+/* -------------------------------
+   PROGRESS BAR
+---------------------------------*/
 .progress-bar {
     width: 100%;
     height: 10px;
@@ -283,6 +297,9 @@ p {
     border-radius: 5px;
 }
 
+/* -------------------------------
+   MESSAGE BOX (Typing)
+---------------------------------*/
 .message-box {
     background-color: #fce4ec;
     border-radius: 20px;
@@ -302,11 +319,11 @@ p {
     opacity: 1;
 }
 
+/* Typing effect */
 .typing-effect {
     border-right: 2px solid #d81b60;
     animation: blink 0.75s step-end infinite;
     overflow: hidden;
-   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -314,10 +331,13 @@ p {
 }
 
 @keyframes blink {
-    from, to { border-color: transparent }
-    50% { border-color: #d81b60 }
+    from, to { border-color: transparent; }
+    50% { border-color: #d81b60; }
 }
 
+/* -------------------------------
+   SOCIAL SHARE ICONS
+---------------------------------*/
 .social-share {
     display: flex;
     justify-content: center;
@@ -345,8 +365,9 @@ p {
     box-shadow: 0 8px 20px rgba(216, 27, 96, 0.4);
 }
 
-
-
+/* -------------------------------
+   POLAROID MEMORIES
+---------------------------------*/
 .polaroid {
     background: white;
     padding: 15px 15px 60px 15px;
@@ -376,31 +397,14 @@ p {
     margin-top: 10px;
 }
 
-.memory-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin: 30px 0;
-}
-
-.countdown {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #d81b60;
-    text-align: center;
-    margin: 20px 0;
-    font-family: 'Dancing Script', cursive;
-}
-
-
-
+/* -------------------------------
+   PETALS
+---------------------------------*/
 .petals {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     pointer-events: none;
     z-index: 5;
     overflow: hidden;
@@ -414,6 +418,9 @@ p {
     z-index: 5;
 }
 
+/* -------------------------------
+   SIGNATURE
+---------------------------------*/
 .signature {
     font-family: 'Dancing Script', cursive;
     font-size: 2rem;
@@ -423,8 +430,9 @@ p {
     padding-right: 50px;
 }
 
-
-
+/* -------------------------------
+   FIREWORKS
+---------------------------------*/
 .firework {
     position: absolute;
     width: 5px;
@@ -437,14 +445,8 @@ p {
 }
 
 @keyframes firework-animation {
-    0% {
-        transform: translate(var(--x), var(--y));
-        opacity: 1;
-    }
-    100% {
-        transform: translate(var(--x-end), var(--y-end));
-        opacity: 0;
-    }
+    0% { transform: translate(var(--x), var(--y)); opacity: 1; }
+    100% { transform: translate(var(--x-end), var(--y-end)); opacity: 0; }
 }
 
 .firework-particle {
@@ -458,51 +460,24 @@ p {
 }
 
 @keyframes firework-particle {
-    0% {
-        transform: translate(0, 0);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(var(--tx), var(--ty));
-        opacity: 0;
-    }
+    0% { transform: translate(0, 0); opacity: 1; }
+    100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
 }
 
-/* Responsive adjustments */
+/* -------------------------------
+   RESPONSIVE STYLES
+---------------------------------*/
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-    h2 {
-        font-size: 2rem;
-    }
-    .container {
-        padding: 20px;
-    }
-    .photo-frame {
-        width: 180px;
-        height: 180px;
-    }
-  
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .container { padding: 20px; }
+    .photo-frame { width: 180px; height: 180px; }
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 2rem;
-    }
-    h2 {
-        font-size: 1.5rem;
-    }
-    p {
-        font-size: 1rem;
-    }
-    .btn {
-        padding: 12px 25px;
-        font-size: 1rem;
-    }
-    .photo-frame {
-        width: 150px;
-        height: 150px;
-    }
-    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    p { font-size: 1rem; }
+    .btn { padding: 12px 25px; font-size: 1rem; }
+    .photo-frame { width: 150px; height: 150px; }
 }
