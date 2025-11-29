@@ -2,7 +2,7 @@
 // Initialize variables
 let currentStep = 1;
 const totalSteps = 6;
-const userName = "Vaiduu"
+const userName = "Vaiduu";
 
 
 // Initialize particles.js
