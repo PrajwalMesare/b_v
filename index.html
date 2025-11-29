@@ -3,80 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Vaiduu</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat&display=swap" rel="stylesheet">
+    <title>Specially For Vaiduu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="particles-js"></div>
 
     <div class="container">
-        <h1>Happy Birthday Vaiduu! 🎉</h1>
+        <h1>Happy Special Day!</h1>
+        <h2>Vaiduu</h2>
 
-        <div class="progress-bar">
-            <div id="progressBar" class="progress"></div>
-        </div>
-
-        <!-- Step 1: Envelope -->
-        <div class="step active" id="step1">
-            <div id="envelope" class="btn" onclick="nextStep()">Open Your Birthday Wish</div>
-        </div>
-
-        <!-- Step 2: Interactive Heart -->
-        <div class="step" id="step2">
-            <h2>Click the Heart 💖</h2>
-            <div id="interactiveHeart" class="heart"></div>
-            <p id="heartMessage" class="message-box">Happy Birthday, Vaiduu! ❤</p>
-        </div>
-
-        <!-- Step 3: Photo Frame -->
-        <div class="step" id="step3">
-            <h2>Memories</h2>
-            <div class="photo-frame">
-                <img src="your-photo.jpg" alt="Photo">
-            </div>
-        </div>
-
-        <!-- Step 4: Polaroids -->
-        <div class="step" id="step4">
-            <h2>Special Moments</h2>
-            <div class="memory-container">
-                <div class="polaroid">
-                    <img src="photo1.jpg" alt="">
-                    <div class="polaroid-caption">Fun Times</div>
-                </div>
-                <div class="polaroid">
-                    <img src="photo2.jpg" alt="">
-                    <div class="polaroid-caption">Great Memories</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Step 5: Fireworks -->
-        <div class="step" id="step5">
-            <h2>Celebrate!</h2>
+        <div class="step active">
             <div class="heart"></div>
+            <div class="message-box show">
+                <p class="typing-effect">Wishing you lots of love, happiness, and amazing memories today and always!</p>
+            </div>
         </div>
 
-        <div class="countdown" id="countdown">
-            <span id="days">00</span>d : 
-            <span id="hours">00</span>h : 
-            <span id="minutes">00</span>m : 
-            <span id="seconds">00</span>s
+        <div class="memory-container">
+            <div class="polaroid">
+                <img src="image1.jpg" alt="Memory 1">
+                <div class="polaroid-caption">Memory 1</div>
+            </div>
+            <div class="polaroid">
+                <img src="image2.jpg" alt="Memory 2">
+                <div class="polaroid-caption">Memory 2</div>
+            </div>
         </div>
 
-        <div class="social-share">
-            <div class="social-icon" onclick="shareOnSocial('facebook')">F</div>
-            <div class="social-icon" onclick="shareOnSocial('twitter')">T</div>
-            <div class="social-icon" onclick="shareOnSocial('whatsapp')">W</div>
-        </div>
+        <button class="btn" onclick="startFloatingHearts()">Send Love</button>
     </div>
 
-    <div class="floating-hearts" id="floatingHearts"></div>
-    <div class="petals" id="petalsContainer"></div>
+    <div class="floating-hearts"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="particles.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
